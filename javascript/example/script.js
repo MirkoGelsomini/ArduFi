@@ -10,6 +10,8 @@ $( document ).ready(function() {
         
         $("#sentValue").text(valueToSend); //show the valueToSend
         
+        setData(valueToSend);
+        
     });
     
     $("#ipaddress").on("change",function(){
@@ -25,5 +27,5 @@ $( document ).ready(function() {
 
 function onReceivedData(receivedData){
     console.log("I received from Arduino: "+receivedData);
-    
+    $("#receivedValue").text(receivedData);
 }
