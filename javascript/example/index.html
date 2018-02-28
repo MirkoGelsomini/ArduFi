@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Title of your project</title>
+    <!-- common jquery script -->
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <!-- script to use arduino -->
+    <script type="text/javascript" src="../ardufi.js"></script>
+    <!-- your script -->
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+    <h1>ArduFi</h1>
+    -----------------------------------------------------------------
+    <br/><br/> <b>Arduino IP: </b><input type="text" placeholder="ip address" id="ipaddress">
+    <br/>
+    -----------------------------------------------------------------
+    <br/><br/><input type="text" placeholder="write a value here" id="valueToSend">
+    <input type="button" value="Send value to Arduino" id="sendButton">
+    <br/><br/> <b>Last value sent to Arduino: </b><span id="sentValue"></span>
+    <br/>
+    -----------------------------------------------------------------
+    <br/><br/> <b>Received value from Arduino: </b><span id="receivedValue"></span>
+    <br/>
+    -----------------------------------------------------------------
+</body>
+
+</html>
