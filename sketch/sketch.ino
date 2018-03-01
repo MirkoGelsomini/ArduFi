@@ -33,7 +33,7 @@ void setup() {
   server.begin();
   Serial.println("HTTP server started");
   Serial.println("-----------------> Connected to Wifi: "+WiFi.SSID());
-  Serial.println("-----------------> Ip Address:"+WiFi.localIP().toString());
+  Serial.println("-----------------> Ip Address: "+WiFi.localIP().toString());
 
   // put your setup code here, to run once:
 }
