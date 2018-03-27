@@ -1,22 +1,18 @@
 #include <ESP8266WebServer.h>
 #include <WiFiManager.h>
-
 ESP8266WebServer server(80);
-
 const int led = LED_BUILTIN;
-
 int myData = -1;
 
 void setup() {
-  // Led configuration
-  pinMode(LED_BUILTIN, OUTPUT);
+  
+  pinMode(LED_BUILTIN, OUTPUT); // Led configuration
 
-  // Serial configuration
-  Serial.begin(115200);
+  
+  Serial.begin(115200); // Serial configuration
   Serial.println("Starting...");
-
-  // Wifi configuration
-  Serial.println("------------ WiFiManager ---------");
+  
+  Serial.println("------------ WiFiManager ---------");  // Wifi configuration
   
   WiFiManager wifiManager; //Local initialization of WiFiManager
   //wifiManager.resetSettings(); //reset settings - for testing
@@ -36,8 +32,8 @@ void setup() {
   server.onNotFound(handleNotFound);
   server.begin();
   Serial.println("HTTP server started");
-  Serial.println("Connected to Wifi:"+WiFi.SSID());
-  Serial.println("Ip Address:"+WiFi.localIP().toString());
+  Serial.println("-----------------> Connected to Wifi: "+WiFi.SSID());
+  Serial.println("-----------------> Ip Address: "+WiFi.localIP().toString());
 
   // put your setup code here, to run once:
 }
@@ -45,8 +41,8 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 
-  // Ask to the Wemos if there is a pending request
-  server.handleClient();
+  
+  server.handleClient(); // Ask to the Wemos if there is a pending request
 }
 
 void handleRoot() {
@@ -95,6 +91,7 @@ void setData(){
   }else{
     message= "error";
   }
+  
   server.sendHeader("Access-Control-Max-Age", "10000");
   server.sendHeader("Access-Control-Allow-Methods", "*");
   server.sendHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -105,7 +102,7 @@ void setData(){
 
 void handleNotFound(){
   digitalWrite(led, LOW);
-  String message = "File Not Found\n\n";
+  String message = "Wrong call\n\n";
   message += "URI: ";
   message += server.uri();
   message += "\nMethod: ";
@@ -117,7 +114,7 @@ void handleNotFound(){
     message += " " + server.argName(i) + ": " + server.arg(i) + "\n";
   }
   server.sendHeader("Access-Control-Max-Age", "10000");
-  server.sendHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
+  server.sendHeader("Access-Control-Allow-Methods", "*");
   server.sendHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   server.sendHeader("Access-Control-Allow-Origin", "*");
   server.send(404, "text/plain", message);

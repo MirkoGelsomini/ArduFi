@@ -25,3 +25,12 @@ function getData(callback) {
         }
     });
 }
+
+function getDataInterval(callback,frequency) {
+    window.setInterval(
+        function () {
+            getData(callback);
+        }, 
+        frequency
+    );
+}

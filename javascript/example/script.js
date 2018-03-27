@@ -1,6 +1,5 @@
 $( document ).ready(function() {
     
-    window.frequency=3000; //interval for arduino to be called (in milliseconds)
     window.ipaddress="0.0.0.0" // ip address of your arduino - read it from the console    
     
     $("#sendButton").on("click",function(){ //when the sendButton has been clicked
@@ -19,9 +18,7 @@ $( document ).ready(function() {
         console.log("New IP: "+window.ipaddress);
     });
     
-    
-    window.setInterval(function(){ getData(onReceivedData);}, window.frequency);
-    
+    getDataInterval(onReceivedData,1000);    
     
 });
 
