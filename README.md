@@ -19,3 +19,6 @@ Test drive the complete setup using the boiler plate sketch.
 To upload the boiler plate sketch go to Sketch | Upload or use the shortcut key Crtl+U or click on the right arrow button next to the check mark. A successful compile and upload means all systems are working and we are ready to get to the real stuff.
 
 TODO: Download https://github.com/tzapu/WiFiManager and move in the library folder
+
+WIFI: Interaction Design Studio - right/left  
+PSW: !design!

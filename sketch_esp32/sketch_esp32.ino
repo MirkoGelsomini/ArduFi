@@ -1,9 +1,9 @@
 #include <WiFi.h>
 #include <WiFiClient.h>
-#include <WebServer.h>
+#include "libraries/WebServerEsp32/src/Parsing.cpp"
+#include "libraries/WebServerEsp32/src/WebServer.cpp"
 #include <ESPmDNS.h>
-#include <FS.h>
-#include "WiFiManager-development/WiFiManager.cpp"
+#include "libraries/WiFiManager-dev/WiFiManager.cpp"
 
 WebServer server(80);
 
