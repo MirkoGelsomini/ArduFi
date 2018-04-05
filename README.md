@@ -6,6 +6,8 @@ Download the Arduino IDE Installer for your Operating System
 
 Install the software
 
+For ESP8266 Board:
+
 Open File -> Preferences and paste this link http://arduino.esp8266.com/stable/package_esp8266com_index.json in “Additional Boards Manager URLs”
 
 Open Tools -> Board:-> Boards Manager dialog box. Somewhere in there you will see the entry “esp8266 of ESP8266 Community” select that. The Install button will appear, click the Install button. Wait for a while… This process will take some time to download and complete. After the install it is a good idea to shut the Arduino program and restarted it.
